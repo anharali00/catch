@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body
+        {
+            background-color: #646464;
+        }
+        #meme
+        {
+            background: url("image.gif") no-repeat;
+            background-size: 100% 100%;
+            width: 800px;
+            height: 600px;
+            border: 2px solid black;
+            border-radius: 30px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 10px;
+            position: relative;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            margin-top: 60px;
+        }
+
+        #top_text
+        {
+            font-size: 50px;
+        }
+
+        #bottom_text
+        {
+            width: 100%;
+            position: absolute;
+            bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <div id="meme">
+        <h1 id="top_text">Name</h1>
+        <h2 id="top_small">I can't believe you clicked the link</h2>
+
+        <h1 id="bottom_text">And now Anhar knows you did</h1>
+    </div>
+
+    <script>
+window.params = function(){
+    var params = {};
+    var param_array = window.location.href.split('?')[1].split('&');
+    for(var i in param_array){
+        x = param_array[i].split('=');
+        params[x[0]] = x[1];
+    }
+    return params;
+}();
+
+//file:///C:/Users/Admin/Desktop/js_url_name/index.html?name=David
+//if(window.params.name == 'something') doStuff();
+
+doStuff();
+
+function doStuff()
+{
+    document.getElementById("top_text").innerHTML = "Hello: " + window.params.name;
+}
+
+
+    </script>
+</body>
+</html>
