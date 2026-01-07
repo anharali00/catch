@@ -70,10 +70,21 @@ doStuff();
 
 function doStuff()
 {
+
+    if(window.params.name != "Anhar")
+    {
     document.getElementById("top_text").innerHTML = "Hello: " + window.params.name;
+    }
+    else
+    {
+        document.getElementById("meme").innerHTML = "";
+    }
+
+    
 }
 
 
     </script>
 </body>
+
 </html>
